@@ -9,7 +9,6 @@ const tickets = [
     price: '5',
     accent: 'bg-google-green',
     deadline: 'Registration ends 30 Sep 2026',
-    note: 'Students, job seekers and those unemployed — reach out to us for a discount code!',
     perks: [
       'In-person entry',
       'Full day of talks & workshops',
@@ -22,7 +21,6 @@ const tickets = [
     price: '10',
     accent: 'bg-google-blue',
     deadline: 'Registration ends 28 Nov 2026',
-    note: null,
     perks: [
       'In-person entry',
       'Full day of talks & workshops',
@@ -51,7 +49,12 @@ export function Tickets() {
           2026. Early bird pricing is available for a limited time.
         </p>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        <p className="mt-8 rounded-md border border-google-green/30 bg-google-green/10 px-4 py-3 text-sm leading-relaxed text-foreground">
+          Students, job seekers and those unemployed &mdash; reach out to us for
+          a discount code!
+        </p>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {tickets.map((ticket) => (
             <div
               key={ticket.name}
@@ -97,12 +100,6 @@ export function Tickets() {
                   </li>
                 ))}
               </ul>
-
-              {ticket.note && (
-                <p className="mt-6 rounded-md border border-border bg-background/60 p-3 text-xs leading-relaxed text-muted-foreground">
-                  {ticket.note}
-                </p>
-              )}
 
               <a
                 href={TICKETS_URL}
