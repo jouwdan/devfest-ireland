@@ -1,6 +1,7 @@
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { Highlights } from '@/components/highlights'
+import { Tickets } from '@/components/tickets'
 import { CtaFooter } from '@/components/cta-footer'
 
 export default function Page() {
@@ -9,6 +10,7 @@ export default function Page() {
       <SiteHeader />
       <Hero />
       <Highlights />
+      <Tickets />
       <CtaFooter />
     </main>
   )

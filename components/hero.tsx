@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { Play, MapPin, CalendarDays, ArrowUpRight } from 'lucide-react'
 import { VideoModal } from '@/components/video-modal'
 
-const LINKEDIN_URL = 'https://www.linkedin.com/company/devfestireland'
+const TICKETS_URL =
+  'https://gdg.community.dev/events/details/google-gdg-dublin-presents-devfest-ireland-2026-1'
 
 export function Hero() {
   const [videoOpen, setVideoOpen] = useState(false)
@@ -44,6 +45,7 @@ export function Hero() {
         <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-foreground/85">
           Ireland&apos;s largest community-led developer festival returns &mdash;
           a day of talks, code and connection across web, cloud, AI and mobile.
+          Tickets are on sale now, from just &euro;5.
         </p>
 
         <div className="mt-9 flex flex-col gap-x-8 gap-y-3 border-l border-border pl-5 font-display text-base text-foreground sm:flex-row sm:items-center sm:border-l-0 sm:pl-0">
@@ -60,12 +62,12 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
-            href={LINKEDIN_URL}
+            href={TICKETS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 font-display text-base font-semibold text-background transition-colors hover:bg-google-blue hover:text-white"
           >
-            Get Notified
+            Get Tickets
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <button
