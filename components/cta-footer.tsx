@@ -16,10 +16,10 @@ export function CtaFooter() {
             <span className="h-px w-8 bg-google-blue" />
           </div>
           <h2 className="mt-6 text-balance font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Secure your place before early bird ends.
+            Secure your place at DevFest Ireland.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-pretty leading-relaxed text-muted-foreground">
-            Early bird tickets are just &euro;5 until 30 September 2026. Register
+            General entry tickets are &euro;10 until 28 November 2026. Register
             now on the GDG community page and join us in Dublin.
           </p>
           <a

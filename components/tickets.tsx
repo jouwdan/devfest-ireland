@@ -14,7 +14,8 @@ const tickets = [
       'Full day of talks & workshops',
       'Lowest price while it lasts',
     ],
-    featured: true,
+    featured: false,
+    ended: true,
   },
   {
     name: 'General Entry',
@@ -26,7 +27,8 @@ const tickets = [
       'Full day of talks & workshops',
       'Community networking',
     ],
-    featured: false,
+    featured: true,
+    ended: false,
   },
 ]
 
@@ -46,7 +48,7 @@ export function Tickets() {
         </h2>
         <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">
           A full day at the National College of Ireland, Dublin on 28 November
-          2026. Early bird pricing is available for a limited time.
+          2026.
         </p>
 
         <p className="mt-8 rounded-md border border-google-green/30 bg-google-green/10 px-4 py-3 text-sm leading-relaxed text-foreground">
@@ -58,7 +60,9 @@ export function Tickets() {
           {tickets.map((ticket) => (
             <div
               key={ticket.name}
-              className="relative flex flex-col overflow-hidden rounded-lg border border-border bg-card p-8"
+              className={`relative flex flex-col overflow-hidden rounded-lg border border-border bg-card p-8 ${
+                ticket.ended ? 'opacity-50' : ''
+              }`}
             >
               <span
                 className={`absolute inset-x-0 top-0 h-0.5 ${ticket.accent}`}
@@ -67,9 +71,9 @@ export function Tickets() {
                 <h3 className="font-display text-xl font-semibold">
                   {ticket.name}
                 </h3>
-                {ticket.featured && (
-                  <span className="rounded-full bg-google-green/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-google-green">
-                    Best value
+                {ticket.ended && (
+                  <span className="rounded-full bg-muted px-3 py-1 font-mono text-xs uppercase tracking-wide text-muted-foreground">
+                    Ended
                   </span>
                 )}
               </div>
@@ -101,19 +105,28 @@ export function Tickets() {
                 ))}
               </ul>
 
-              <a
-                href={TICKETS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 font-display text-base font-semibold transition-colors ${
-                  ticket.featured
-                    ? 'bg-foreground text-background hover:bg-google-blue hover:text-white'
-                    : 'border border-border text-foreground hover:border-foreground/40 hover:bg-background/70'
-                }`}
-              >
-                Get {ticket.name}
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              {ticket.ended ? (
+                <span
+                  aria-disabled="true"
+                  className="mt-8 inline-flex cursor-not-allowed items-center justify-center rounded-md border border-border px-6 py-3.5 font-display text-base font-semibold text-muted-foreground"
+                >
+                  Sales ended
+                </span>
+              ) : (
+                <a
+                  href={TICKETS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 font-display text-base font-semibold transition-colors ${
+                    ticket.featured
+                      ? 'bg-foreground text-background hover:bg-google-blue hover:text-white'
+                      : 'border border-border text-foreground hover:border-foreground/40 hover:bg-background/70'
+                  }`}
+                >
+                  Get {ticket.name}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              )}
             </div>
           ))}
         </div>
