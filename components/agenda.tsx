@@ -82,12 +82,12 @@ const talks: Slot[] = [
 
 const workshops = [
   {
-    time: '14:30–15:30',
+    time: '14:00–15:00',
     title: 'The Agent-Ready Web: Architecting Applications for WebMCP',
     speaker: 'Patty O’Callaghan',
   },
   {
-    time: '15:45–16:45',
+    time: '15:15–16:15',
     title: 'Put Down the API Key: Building a Real AI Model from Scratch',
     speaker: 'Lewis Shearer',
   },
