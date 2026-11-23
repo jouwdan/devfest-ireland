@@ -87,7 +87,7 @@ const workshops = [
     speaker: 'Patty O’Callaghan',
   },
   {
-    time: '15:15–16:15',
+    time: '15:45–16:45',
     title: 'Put Down the API Key: Building a Real AI Model from Scratch',
     speaker: 'Lewis Shearer',
   },
